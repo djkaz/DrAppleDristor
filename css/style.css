@@ -8,8 +8,13 @@ body {
     padding: 0;
 }
 
+.logo img {
+    width: 200px;
+    height: auto;
+}
+
 :root {
-    --primary-color:#ECDFCC;
+    --primary-color:#00c9fc;
     --dark-color:#1E201E;
 
 }
@@ -18,14 +23,9 @@ body {
     display: flex;
 }
 
-.flex-column {
+.flex-col {
     display: flex;
     flex-direction: column;
-}
-
-img {
-    width: 200px;
-    height: auto;
 }
 
 .justify-around {
@@ -45,10 +45,10 @@ img {
 }
 
 .gap-10 {
-    gap: 10px;
+    gap:10px;
 }
 
-.gap-15 {
+.gap-20 {
     gap: 20px;
 }
 
@@ -63,4 +63,24 @@ img {
     font-size: 20px;
     border-radius: 5px;
     padding: 5px 10px;
+}
+
+.card {
+    background-color: white;
+    height: 200px;
+    width: 200px;
+    border: 1px solid lightgray;
+    padding-top: 30px;
+}
+
+.card img {
+    width: 100px;
+}
+
+.card button {
+    width: 200px;
+    color: white;
+    background-color: black;
+    padding: 10px;
+    text-transform: uppercase;
 }
