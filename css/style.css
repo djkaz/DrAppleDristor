@@ -76,7 +76,8 @@ body {
 }
 
 .card img {
-    width: 100px;
+    width: 90px;
+    height: 100px;
 }
 
 .card button {
@@ -85,4 +86,12 @@ body {
     background-color: black;
     padding: 10px;
     text-transform: uppercase;
+}
+
+.products
+{   
+    display: flex;
+    width:100vw;
+    grid-template-columns: repeat(auto-fit,minmax(150px,200px)); 
+    justify-content: space-evenly;
 }
