@@ -70,7 +70,14 @@ body {
     height: 200px;
     width: 200px;
     border: 1px solid lightgray;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding-top: 30px;
+    padding-bottom: 15px;
     margin-top: 30px;
     margin-bottom: 30px;
     border-radius: 5px 5px 0px 0px;
@@ -79,15 +86,17 @@ body {
 .card img {
     width: 90px;
     height: 100px;
+    margin-bottom: 10px;
 }
 
 .card button {
-    width: 200px;
+    width: 202px;
     color: white;
     background-color: black;
     padding: 10px;
     text-transform: uppercase;
     border-radius: 0px 0px 5px 5px;
+
 }
 
 .products
