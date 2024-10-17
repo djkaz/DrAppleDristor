@@ -89,6 +89,9 @@ body {
     margin-bottom: 10px;
 }
 
+.info {
+    padding: 30px;
+}
 .card button {
     width: 202px;
     color: white;
