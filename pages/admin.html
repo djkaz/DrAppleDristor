@@ -23,22 +23,45 @@
         </div>
     </div>
     <div class="products">
-        <div class="card flex-col items-center justify-around gap-20">
-            <div class="info flex-col items-center gap-20">
-                <div class="img">
-                    <img src="https://lcdn.altex.ro/resize/media/catalog/product/i/p/2bd48d28d1c32adea0e55139a4e6434a/iphone_16_pro_desert_1_92abeaef.jpg" alt="iphone16">    
-                </div>
-                <div class="name">
-                    <h4>iPhone 16 Pro
-                    </h4>
-                </div>
-                <div class="price">5800 lei</div>
-            </div>
-            <button class="add-to-cart">Adauga in cos</button>
-        </div>
+        <h1>Admin Page</h1>
+        <form id="product-form">
+          <div>
+            <label for="name">Product name</label>
+            <input type="text" id="name" />
+          </div>
+          <div>
+            <label for="price">Price</label>
+            <input type="text" id="price" />
+          </div>
+          <div>
+            <label for="image-url">Image URL</label>
+            <input type="text" id="image-url" />
+          </div>
+          <div>
+            <label for="details">Details</label>
+            <input type="text" id="details" />
+          </div>
+          <button id="save-btn">Save product</button>
+        </form>
+        <br>
+        <table id="products-table" border="1">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Price</th>
+              <th>Image</th>
+              <th>Details</th>
+              <th>Edit</th>
+              <th>Delete</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+        <script src="../js/admins.js"></script>
     </div>
     <br>
     <br>
-    <h1>Admin page</h1>
+    
+   
 </body>
 </html>

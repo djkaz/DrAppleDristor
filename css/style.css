@@ -120,3 +120,16 @@ body {
     flex-wrap: wrap; /* Allows items to wrap to the next line when space is limited */
     justify-content: space-evenly; 
 }
+
+#product-form {
+    display: flex;
+    align-items: center;
+}
+#products-table {
+    display: row;
+    align-items: center;
+    background-color: white;
+    box-shadow: 0px 0px 10px rgba(114, 114, 113, 0.5);
+    border-collapse: collapse;
+    border-radius: 5px;
+}
