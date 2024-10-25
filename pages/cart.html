@@ -41,5 +41,17 @@
     <br>
     <br>
     <h1>Cart page</h1>
+    <script type="module" src="../js/cart.js"></script>
+    <button   
+    class="add-to-cart">Add to Cart</button>
+   
+     <script>
+       const addToCartButton = document.querySelector('.add-to-cart');
+   
+       addToCartButton.addEventListener('click', () => {
+         // Add product to cart logic here
+         alert('Product added to cart!');
+       });
+     </script>
 </body>
 </html>
