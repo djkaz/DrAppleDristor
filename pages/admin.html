@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="../css/admin.css">
 </head>
 <body>
-   
+    
     <div class="container">
         <div class="nav flex-row bg-white justify-around items-center">
             <div class="logo">
@@ -19,14 +19,16 @@
             <div class="nav-links">
                 <a href="admin.html"><i class="fa-solid fa-user-secret"></i>Admin</a>
                 <a href="cart.html"><i class="fa-solid fa-cart-shopping"></i>Cart</a>
-                <!-- <a href="pages/details.html">Details</a> -->
+                <a href="details.html"><i class="fa-solid fa-circle-info"></i>Details</a> 
+                <a href="contact.html"><i class="fa fa-address-book" aria-hidden="true"></i>Contact</a>
             </div>
         </div>
     </div>
+    <h1>Admin Page</h1>
     <div class="products">
-        <h1>Admin Page</h1>
+      <div id="product-form">
         <form id="product-form">
-          <div>
+          <div>           
             <label for="name">Product name</label>
             <input type="text" id="name" />
           </div>
@@ -44,6 +46,7 @@
           </div>
           <button id="save-btn">Save product</button>
         </form>
+      </div>
         <br>
         <table id="products-table" border="1">
           <thead>
