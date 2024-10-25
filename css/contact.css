@@ -1,0 +1,26 @@
+
+.google-maps {
+	margin: auto;
+  	width: 50%;
+	position: relative; 
+	padding-bottom: 50%; /*This is the aspect ratio*/
+	height: 0;
+	overflow: hidden;
+	
+	
+}
+.google-maps iframe {
+	align-items: center;
+	position: absolute;
+	top: 0;
+	left: 0;
+	/* width: 50% !important;
+	height: 50% !important; */
+	border-radius: 25px 25px 25px 25px;
+}
+
+.contact {
+	width: 50%;
+	/* flex-wrap: wrap; */
+	float:inline-end;
+}
