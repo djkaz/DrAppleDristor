@@ -36,6 +36,19 @@
                 <div class="price">300 lei</div>
             </div>
             <button class="add-to-cart">Adauga in cos</button>
+            // Assuming you have a product object with the necessary data
+const product = {
+  name: 'Product Name',
+  description: 'Product Description',
+  price: 19.99,
+  imageUrl: 'product-image.jpg'
+};
+
+// Update the DOM with product details
+document.querySelector('.product-details img').src = product.imageUrl;
+document.querySelector('.product-details h1').textContent = product.name;
+document.querySelector('.product-details p').textContent = product.description;
+document.querySelector('.product-details .price').textContent = `Price: $${product.price}`; 
         </div>
         <!-- Details produs -->
     </div>
