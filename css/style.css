@@ -177,7 +177,7 @@ input[type=text] {
     border-radius: 10px;
 }
 
-//cart_css
+/* cart_css */
 .content {
     background-color: white;
     height: 200px;
@@ -215,6 +215,7 @@ input[type=text] {
 
 }
 
+/*details css*/
 .product {
     background: white;
     border-radius: 10px;
