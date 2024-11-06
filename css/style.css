@@ -198,20 +198,25 @@ input[type=text] {
 
 
 .cart-items {
-  /* display: flex;*/
-  text-align: center; 
-  align-items: center;
-  background-color: white;
-  box-shadow: 0px 0px 10px rgba(114, 114, 113, 0.5);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2em;
+    text-align: center; 
+    align-items: center;
+    background-color: white;
+    box-shadow: 0px 0px 10px rgba(114, 114, 113, 0.5);
+    justify-content: space-around;
+    gap: 2em;
+
 
 }
 
 .cart-total {
-  /* display: flex;*/
-  text-align: center; 
-  align-items: center;
-  background-color: white;
-  box-shadow: 0px 0px 10px rgba(114, 114, 113, 0.5);
+    /* display: flex;*/
+    text-align: center; 
+    align-items: center;
+    background-color: white;
+    box-shadow: 0px 0px 10px rgba(114, 114, 113, 0.5);
 
 }
 
