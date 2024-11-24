@@ -1,45 +1,68 @@
-const URL = "https://6712bd3c6c5f5ced6624864b.mockapi.io/products";
+import { getProductById } from "../api/products.js";
 
-// Function to fetch product data and display it on the page
-async function displayProductDetails() {
-  try {
-    const response = await fetch(URL);
-    const products = await response.json();
+document.addEventListener("DOMContentLoaded", async () => {
+  const params = new URLSearchParams(window.location.search);
+  const productId = params.get("id");
 
-    // Get the container element where we'll display the product details
-    const container = document.getElementById("product-details");
-
-    // Loop through the products and create HTML elements to display the data
-    products.forEach((product) => {
-      const productElement = document.createElement("div");
-      productElement.classList.add("product");
-
-      const nameElement = document.createElement("h3");
-      nameElement.textContent = product.name;
-
-      const priceElement = document.createElement("p");
-      priceElement.textContent = `Price: $${product.price}`;
-
-      // const pictureElement = document.createElement("p");
-      // pictureElement.textContent = `Picture: ${product.imageURL}`;
-      // pictureElement.textContent = `Picture: ${product.imageURL}`;
-      const pictureElement = document.createElement("img");
-      pictureElement.src = product.imageURL;
-
-      const descriptionElement = document.createElement("p");
-      descriptionElement.textContent = product.details;
-
-      productElement.appendChild(nameElement);
-      productElement.appendChild(priceElement);
-      productElement.appendChild(pictureElement);
-      productElement.appendChild(descriptionElement);
-
-      container.appendChild(productElement);
-    });
-  } catch (error) {
-    console.error("Error fetching product data:", error);
+  if (!productId) {
+    document.getElementById("product-details").innerHTML =
+      "Produsul nu a fost găsit.";
+    return;
   }
+
+  try {
+    const product = await getProductById(productId);
+    displayProductDetails(product);
+  } catch (error) {
+    console.error("Error fetching product details:", error);
+    document.getElementById("product-details").innerHTML =
+      "Eroare la încărcarea detaliilor produsului.";
+  }
+});
+
+function displayProductDetails(product) {
+  const container = document.getElementById("product-details");
+
+  container.innerHTML = `
+    <div class="product-details">
+      <img class="product-image" src="${product.imageURL}" alt="${product.name}" />
+      <h2 class="product-name">${product.name}</h2>
+      <p class="product-price">${product.price} lei</p>
+      <p class="product-details">${product.details} lei</p>
+      <button id="add-to-cart" class="add-to-cart">Adaugă în coș</button>
+    </div>
+  `;
+
+  // Add to Cart button event listener
+  document
+    .getElementById("add-to-cart")
+    .addEventListener("click", () => addToCart(product));
 }
 
-// Call the displayProductDetails function when the page loads
-window.addEventListener("DOMContentLoaded", displayProductDetails);
+function addToCart(product) {
+  let cart = JSON.parse(localStorage.getItem("cart")) || {};
+
+  if (cart[product.id]) {
+    cart[product.id].quantity += 1; // Increment quantity if already in cart
+  } else {
+    cart[product.id] = {
+      id: product.id,
+      name: product.name,
+      price: product.price,
+      image: product.imageURL,
+      quantity: 1, // Start with 1 item
+    };
+  }
+
+  // Save updated cart to localStorage
+  localStorage.setItem("cart", JSON.stringify(cart));
+
+  // Show notification
+  const notification = document.getElementById("notification");
+  notification.innerHTML = "Produsul a fost adăugat în coș.";
+  notification.classList.remove("hidden");
+
+  setTimeout(() => {
+    notification.classList.add("hidden");
+  }, 3000);
+}

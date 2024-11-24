@@ -51,7 +51,9 @@ export function mapProductToCard(product) {
                     <img src=${product.imageURL} alt="">
                 </div>
                 <div class="name">
-                    <h4>${product.name}</h4>
+                    <a href="pages/details.html?id=${product.id}" class="product-name-link">
+                         <h4 class="product-name">${product.name}</h4>
+                    </a>
                 </div>
                 <div class="price">${product.price} lei</div>
             </div>

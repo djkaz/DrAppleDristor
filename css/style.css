@@ -234,3 +234,27 @@ input[type=text] {
     justify-content: space-around;
     gap: 2em;
 }
+
+.product-details {
+    background-color: white;
+    border-radius: 1em;
+    text-align: center;
+    margin: 20px auto;
+    max-width: 600px;
+}
+
+.product-details .product-image {
+    background-color: white;
+    max-width: 300px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.product-details #add-to-cart{ 
+    width: 100%;
+    color: white;
+    background-color: black;
+    padding: 10px;
+    text-transform: uppercase;
+    border-radius: 0px 0px 5px 5px;
+}
